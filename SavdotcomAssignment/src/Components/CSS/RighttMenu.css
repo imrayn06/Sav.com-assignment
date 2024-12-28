@@ -1,0 +1,90 @@
+.right-spacing {
+  gap: 15px;
+  margin: 10px;
+}
+
+.heading-font {
+  font-size: 20px;
+  color: black;
+  margin-bottom: 15px;
+  margin-top: 20px; 
+}
+
+button {
+  border: 1px solid rgb(50, 101, 241);
+  padding: 15px 10px; 
+  border-radius: 5px;
+  background-color: rgb(50, 101, 241);
+  color: white; 
+  font-size: 14px;
+}
+
+.button-clear:hover {
+  background-color: rgb(93, 120, 243);
+  cursor: pointer;
+}
+
+.right-sidebar {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  top: 12px;
+  right: -250px;
+  width: 250px;
+  padding: 20px;
+  background-color: #ece9e9;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+  color: black;
+  transition: right 0.3s ease;
+  height: 100vh;
+  overflow-y: auto;
+  scrollbar-width: none;
+}
+
+.right-sidebar.open {
+  left: 0;
+  margin: 5px;
+}
+
+button.toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 1000;
+  background-color: rgb(50, 101, 241);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button.toggle-button:hover {
+  background-color: rgb(50, 89, 216);
+}
+
+button.toggle-button:focus {
+  outline: 2px solid rgb(50, 101, 241);
+}
+.filter-button{
+    z-index: 1000;
+    padding: '5px';
+    
+}
+
+@media (max-width: 445px) {
+  .right-sidebar {
+    width: 200px;
+    padding: 15px;
+  }
+
+  .right-sidebar.open {
+    left: 0;
+  }
+
+  button.toggle-button {
+    font-size: 14px; /* Adjusted for smaller screens */
+    padding: 8px 12px;
+  }
+}
