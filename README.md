@@ -9,6 +9,7 @@ Currently, two official plugins are available:
 SAV.COM ASSIGNMENT
 
 Deployed Link :  https://startling-youtiao-f5de0f.netlify.app/
+(Note : The API is slow wait on the Homepage for 10 seconds, Thank you)
 
 ScreenShots : 
 
