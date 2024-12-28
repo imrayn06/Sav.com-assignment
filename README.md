@@ -8,6 +8,27 @@ Currently, two official plugins are available:
 
 SAV.COM ASSIGNMENT
 
+Deployed Link :  https://startling-youtiao-f5de0f.netlify.app/
+
+ScreenShots : 
+
+![image](https://github.com/user-attachments/assets/c3493670-b505-4c7a-afa8-1ea66496e67c)
+
+![image](https://github.com/user-attachments/assets/24fe9238-fbfa-4c2e-9360-0bbbc9a6d7c0)
+
+![image](https://github.com/user-attachments/assets/6ca1248a-21be-4cd1-919f-ff20c108e31b)
+
+![image](https://github.com/user-attachments/assets/0fafd794-2a41-40eb-9280-f8c48f52769f)
+
+![image](https://github.com/user-attachments/assets/5d046a71-7c9e-4c9d-89b2-034ec8e8eb84)
+
+![image](https://github.com/user-attachments/assets/084fca7a-6752-4a38-a3d8-87b593736875)
+
+
+
+
+
+
 *** Description***
 
 The Products Management Application is a React-based web application that provides functionality to:
