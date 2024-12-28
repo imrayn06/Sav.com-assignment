@@ -130,7 +130,7 @@ button:hover {
 
 @media (max-width: 480px) {
   .products-container {
-    grid-template-columns: 1fr; /
+    grid-template-columns: 1fr; 
   }
 
   .search-container {
