@@ -18,7 +18,7 @@ The project demonstrates core React concepts and provides an intuitive user inte
 
 - **Search Functionality**: Real-time search to filter products by title.
 - **Pagination**: Navigate through product pages using "Previous," "Next, " and page numbers.
-- **Drag-and-Drop**: Rearrange product positions interactively (Pending implementation).
+- **Drag-and-Drop**: Rearrange product positions interactively .
 - **Interactive Product Cards**: Display product details such as title, category, price, and an image.
 - **reCaptcha for SignUp**: Ensures bot-free user registrations.
 
