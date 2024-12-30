@@ -10,7 +10,7 @@ const Products = ({ products }) => {
     useState(products); //for drag and drop selection
   const [currentPage, setCurrentPage] = useState(1); //pagination
   const [loading, setLoading] = useState(true);
-  const itemsPerPage = 9; // Number of items to display per page
+  const itemsPerPage = 9; 
   const navigate = useNavigate();
 
   const handleLogout = () => {
@@ -20,32 +20,27 @@ const Products = ({ products }) => {
   const handleSearch = (e) => {
     setsearchItem(e.target.value);
     setCurrentPage(1); // reset to page 1 when searching
-  };
+  }; // Filter
 
-  // Filter
   const filteredProducts = currentSelectedProducts.filter((product) =>
     product.title.toLowerCase().includes(searchItem.toLowerCase())
-  );
+  ); // Get the products
 
-  // Get the products
   const indexOfLastProduct = currentPage * itemsPerPage;
   const indexOfFirstProduct = indexOfLastProduct - itemsPerPage;
   const currentProducts = filteredProducts.slice(
     indexOfFirstProduct,
     indexOfLastProduct
-  );
+  ); // Change page
 
-  // Change page
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => setCurrentPage(pageNumber); // previous page
 
-  // previous page
   const goToPreviousPage = () => {
     if (currentPage > 1) {
       setCurrentPage(currentPage - 1);
     }
-  };
+  }; // next page
 
-  // next page
   const goToNextPage = () => {
     if (currentPage < Math.ceil(filteredProducts.length / itemsPerPage)) {
       setCurrentPage(currentPage + 1);
@@ -78,20 +73,20 @@ const Products = ({ products }) => {
     setTimeout(() => {
       setCurrentSelectedProducts(products);
       setLoading(false);
-    }, 1000); 
+    }, 1000);
   }, [products]);
 
   if (loading) {
     return (
       <div className="loading-container">
-        <div className="spinner"></div>
-        <p>Loading...</p>
+         <div className="spinner"></div> <p>Loading...</p>{" "}
       </div>
     );
   }
 
   return (
     <div>
+      {" "}
       <div
         style={{
           display: "flex",
@@ -100,10 +95,10 @@ const Products = ({ products }) => {
           padding: "10px",
           backgroundColor: "#f4f4f4",
           borderBottom: "1px solid #ddd",
-          margin : "15px"
+          margin: "15px",
         }}
       >
-        <h2>Products</h2>
+         <h2>Products</h2>{" "}
         <button
           onClick={handleLogout}
           style={{
@@ -115,11 +110,13 @@ const Products = ({ products }) => {
             cursor: "pointer",
           }}
         >
-          Logout
+           Logout {" "}
         </button>
+        {" "}
       </div>
-      {/* Search Input and Button */}
+       {/* Search Input and Button */}{" "}
       <div className="search-container">
+        {" "}
         <input
           type="text"
           placeholder="Search products..."
@@ -127,16 +124,19 @@ const Products = ({ products }) => {
           onChange={handleSearch}
           className="search-input"
         />
-        <button className="search-button">Search</button>
+         <button className="search-button">Search</button>
+        {" "}
         <RightMenu
           products={products}
           onFilterChange={setCurrentSelectedProducts}
         />
+        {" "}
       </div>
-
-      {/* Scrollable Container */}
+       {/* Scrollable Container */}{" "}
       <div className="products-scroll-container">
+        {" "}
         <div className="products-container">
+          {" "}
           {currentProducts.map((pro, index) => (
             <div
               key={pro.id}
@@ -146,23 +146,27 @@ const Products = ({ products }) => {
               onDragOver={onDragOver}
               onDrop={(e) => onDrop(e, index)}
             >
-              <h4>{pro.title.slice(0, 10)} </h4>
-              <img src={pro.image} alt="image" />
+               <h4>{pro.title.slice(0, 10)} </h4>
+              <img src={pro.image} alt="image" />{" "}
               <p>
-                <b>Category:</b> {pro.category}
+                <b>Category:</b> {pro.category}{" "}
               </p>
               <p>Description : {pro.description.slice(0, 35)}</p>
-              <h4>Price: ${pro.price}</h4>
+              <h4>Price: ${pro.price}</h4>{" "}
               <div className="button-group">
+                {" "}
                 <button className="buy-now-button">Buy now</button>
                 <button className="add-to-cart-button">Add to cart</button>
+                {" "}
               </div>
+              {" "}
             </div>
           ))}
+          {" "}
         </div>
+        {" "}
       </div>
-
-      {/* Pagination  */}
+      {/* Pagination */}{" "}
       <div
         className="pagination"
         style={{
@@ -171,6 +175,7 @@ const Products = ({ products }) => {
           alignItems: "center",
         }}
       >
+        {" "}
         <button
           style={{
             border: "1px solid gray",
@@ -183,9 +188,9 @@ const Products = ({ products }) => {
           }}
           onClick={goToPreviousPage}
         >
-          Previous
+          Previous {" "}
         </button>
-
+        {" "}
         {Array.from(
           { length: Math.ceil(filteredProducts.length / itemsPerPage) },
           (_, index) => (
@@ -202,11 +207,11 @@ const Products = ({ products }) => {
               key={index + 1}
               onClick={() => paginate(index + 1)}
             >
-              {index + 1}
+               {index + 1}{" "}
             </button>
           )
         )}
-
+        {" "}
         <button
           style={{
             border: "1px solid gray",
@@ -219,9 +224,11 @@ const Products = ({ products }) => {
           }}
           onClick={goToNextPage}
         >
-          Next
+         Next {" "}
         </button>
+        {" "}
       </div>
+      {" "}
     </div>
   );
 };
